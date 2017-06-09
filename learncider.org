@@ -1,0 +1,142 @@
+* TODO Intro
+ - [ ] About CIDER?
+   - Bozhidar "bug" Batsov
+   - Also created Prelude
+   - CIDER https://github.com/clojure-emacs/cider
+   - [[https://www.youtube.com/watch?v%3DaYA4AAjLfT0&t%3D14s][Deep Dive Into CIDER]] on youtube
+ - [ ] Pros/Cons
+   - Powerful, Mature, Very Customizable
+   - Feature Rich
+   - You get EMACS in the bargain
+   - Steep learning curve to use
+   - Can be daunting to set up and maintain
+* TODO Install [0/4]
+ - [ ] Java
+ - [ ] leiningen
+ - [ ] ~/.lein/profiles.clj
+ - [ ] Emacs - [[http://www.braveclojure.com/basic-emacs/][braveclojure]]
+* TODO Emacs basics [0/17]
+ - [ ] Open new/existing file: C-x C-f
+ - [ ] Dired: open a folder
+ - [ ] Close buffer: C-x k
+ - [ ] Save buffer to file: C-x C-s
+ - [ ] down/up/left/right: C-n, C-p, C-b, C-f
+ - [ ] undo: C-\
+ - [ ] Search: C-s, C-r
+ - [ ] Open window v/h: C-x 2, C-x 3
+ - [ ] One window: C-x 1
+ - [ ] next window: C-x o
+ - [ ] Switch to buffer: C-x b
+ - [ ] List buffers: C-x C-b
+ - [ ] Close buffer: C-x k
+ - [ ] Run function: M-x
+ - [ ] Rectangular: C-x r k, C-x r t
+ - [ ] Macro def: C-x (, C-x )
+ - [ ] close emacs: C-x C-c
+* TODO Config [0/10]
+ - [ ] config: ~/.emacs.d/init.el 
+ - [ ] prelude?: 
+ - [ ] package-list-packages
+ - [ ] cider
+ - [ ] eldoc
+ - [ ] Paredit
+   - [ ] forward barf/slurp C-right,C-left
+   - [ ] backward barf/slurp C-M-right, C-M-left
+   - [ ] magic paren/bracket/brace: on region
+   - [ ] magic forward/backward delete
+ - [ ] Completion
+ - [ ] ido
+ - [ ] rainbow parens
+ - [ ] menus
+* TODO Starting [0/4]
+ - [ ] Jack in: C-c M-j
+ - [ ] Set namespace: C-c M-n
+ - [ ] Toggle file/repl: C-c C-z
+ - [ ] Quit: C-c C-q
+* TODO Evaluation [0/8]
+ - [ ] current sexp: C-M-x
+ - [ ] last sexp: C-x C-e or C-c C-e
+ - [ ] selected region: C-c C-v r
+ - [ ] ns form: C-c C-v n
+ - [ ] last sexp and insert: C-u C-x C-e
+ - [ ] insert last sexp in REPL: C-c M-p
+ - [ ] Load buffer C-c C-k
+ - [ ] Load file C-c C-l
+* TODO Inspect: C-c M-i
+* TODO Tracing: [0/1]
+ - [ ] toggle trace var: C-c M-t v
+* TODO In The REPL
+ - [ ] Eval (note namespace)
+ - [ ] Next/prev: M-p / M-n
+ - [ ] Next/prev: C-up, C-down
+ - [ ] open newline: C-j (rare)
+ - [ ] 
+* TODO Documentation
+ - [ ] cider-doc: C-c C-d d
+ - [ ] cider-javadoc: C-c C-d j
+ - [ ] cider-grimoire: C-c C-d r
+ - [ ] cider-grimoire web: C-c C-d w
+ - [ ] cider-apropos-doc: C-c C-d f
+ - [ ] cider-apropos (e.g. "inter")
+* TODO Jump
+ - [ ] Go to symbol def: M-.
+ - [ ] Find resource: C-c M-.
+ - [ ] Return: M-,
+ - [ ] On project symbol
+ - [ ] On clojure symbol
+ - [ ] On Java symbol
+* TODO Macro Expand
+ - [ ] 1 level: C-c RET
+ - [ ] all: C-c M-m
+* TODO Test
+ - [ ] run test C-c C-t t
+ - [ ] all project tests: C-c C-t p
+ - [ ] all loaded tests: C-c C-t l
+ - [ ] all namespace tests: C-c C-t n
+ - [ ] show test report: C-c C-t b
+* TODO Debugging [0/9]
+ - [ ] [[https://github.com/clojure-emacs/cider/blob/master/doc/debugging.md][cider debug page]]
+ - [ ] instrument form: C-u C-M-x
+ - [ ] eval instrumented function
+   - [ ] continue: c
+   - [ ] eval code in current context: e
+   - [ ] skip sexps up to here: h (position cursor)
+   - [ ] step in: i
+   - [ ] inject a value: j
+   - [ ] inspect locals: l
+   - [ ] next: n
+   - [ ] step out: o
+   - [ ] inspect a value: p
+   - [ ] quit: q
+   - [ ] show current stack: s
+   - [ ] turn on trace: t
+ - [ ] stack trace (goto error buffer)
+ - [ ] with #break
+ - [ ] with #dbg
+ - [ ] conditional breakpoint
+ - [ ] insert conditional: C-u C-u C-M-x
+ - [ ] uninstrument: re-eval function
+* TODO Refactoring [0/12]
+ - [ ] see [[https://github.com/clojure-emacs/clj-refactor.el/wiki][list of refactorings]]
+ - [ ] toggle str/keyword: C-:
+ - [ ] convert to vector: C-c C-r [ 
+ - [ ] convert to map: C-c C-r { 
+ - [ ] convert to set: C-c C-r # 
+ - [ ] convert to list: C-c C-r ( 
+ - [ ] convert to quoted list: C-c C-r '
+ - [ ] thread last: C-c C-r l
+   - note: cursor at start of form
+ - [ ] thread first: C-c C-r f
+   - note: cursor at start of form
+ - [ ] unthread: C-c C-r a
+ - [ ] introduce let: C-c C-r s i
+ - [ ] move to let: C-c C-r s m
+   - note: cursor on "2"
+   - note: use any symbol name, e.g. "x"
+* TODO Links
+ - Clojure Docs: https://clojuredocs.org/
+ - CIDER: https://github.com/clojure-emacs/cider
+ - Sip of Cider: https://tbellisiv.gitbooks.io/clojure-emacs-cider-intro/content/Cider_Tour/
+ - Brave Clojure: http://www.braveclojure.com/
+ - Videos: https://www.youtube.com/watch?v=aYA4AAjLfT0 and many others
+ - Slack: #cider channel in clojurians.slack.com
