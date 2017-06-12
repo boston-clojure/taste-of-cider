@@ -13,13 +13,22 @@
 ;; CIDER Eval menu
 
 (+ 1 2 (* 3 4))
-; 15
 
 ;; current sexp: C-M-x
+    ;; cursor anywhere in the expression => 15
+
 ;; last sexp: C-x C-e or C-c C-e
+    ;; cursor after expression => 15
+    ;; cursor after (* 3 4) => 12
+    ;; cursor after 2 => 2
+
 ;; selected region: C-c C-v r
 ;; ns form: C-c C-v n
+
 ;; last sexp and insert: C-u C-x C-e
+    ;; cursor on empty line below yeilds 15 inserted into buffer                     
+    ;; 15
+
 ;; insert last sexp in REPL: C-c M-p
 ;; Load buffer C-c C-k
 ;; Load file C-c C-l
@@ -90,8 +99,8 @@
 (dotimes [i 10]
   (prn i))
 
-;; stacktrace
-(/ 1 0)
+;; stacktrace (uncomment to throw)
+;;(/ 1 0)
 
 ;; Browse
 ;; use CIDER Interactions browse menu
@@ -149,27 +158,32 @@
 
 ;; (filter even? (map inc (range 10)))
 
-;; let
-(defn handle-request
+;; let refactoring
+
+(defn handle-request [abc]
   {:status 200
-   :body (find-body abc)})
+   :body (identity abc)})
 
 ;; C-c C-r s i  introduce let
-;; position cursor at (find-body..)
-(defn handle-request
+;; position cursor before "identity"
+;; name of bound symbol "x"
+(defn handle-request [abc]
   {:status 200
-   :body (let [x (find-body abc)]
+   :body (let [x (identity abc)]
            x)})
+
 
 ;; before move to let
 (defn handle-request [abc]
-  (let [body (find-body abc)]
+  (let [body (identity abc)]
     {:status 200
      :body body}))
 
-;; after: C-c C-r s m  move to let
+;; after C-c C-r s m  move to let
+;; cursor on "2"
+;; name of bound symbol "x"
 (defn handle-request [abc]
-  (let [body (find-body abc)
+  (let [body (identity abc)
         x 200]
     {:status x
      :body body}))
